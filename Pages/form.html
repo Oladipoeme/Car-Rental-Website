@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MORENT - HOME</title>
+    <link rel="stylesheet" href="./styles.css">     
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo-container">
+            <img class="main-logo" src="../Assets/Images/Logo.svg" alt="MORENT Logo" onclick="home()"/>
+        </div>
+        <form class="search-container" onsubmit="searchCar(event)">
+                <input class="search-bar" id="search-bar"/>
+                <button id="search-button" type="submit"></button>
+        </form>
+            <div class="icon-container">
+                <ul>
+                    <li class="like-button"><a href="#like"><img src="../Assets/Icons/Like.svg" alt="Like Button"/></a></li>
+                    <li class="notification-button"><a href="#notification"><img src="../Assets/Icons/Notification.svg" alt="Notification Button"/></a></li>
+                    <li class="settings-button"><a href="#settings"><img src="../Assets/Icons/Settings.svg" alt="Settings Button"/></a></li>
+                    <li class="profile--button"><a href="#profile"><img src="../Assets/Icons/Profil.svg" alt="Profile Button"/></a></li>
+                </ul>
+            </div>
+    </nav>
+
+    <main>
+    <div id="main-content">
+        <section id="car-rental-form">
+            <form action="/submit-rental" method="post">
+
+                <div class="billing-info form-style">
+                    <div class="billing-header">
+                        <div class="billing-left">
+                            <h4>Billing Info</h4>
+                            <p>Please enter your billing info</p>
+                        </div>
+                        <p>Step 1 of 4</p>
+                    </div>
+                    <div class="form-grid">    
+                        <label>Name
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </label>
+                        <label>Phone Number
+                            <input type="number" id="phone" name="phone" placeholder="Phone Number" required>
+                        </label>
+                        <label>Address
+                            <input type="text" id="Address" name="Address" placeholder="Address" required>
+                        </label>
+                        <label>Town/City
+                            <input type="text" id="town/city" name="town/city" placeholder="Town or City" required>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="rental-info form-style">
+                    <div class="rental-header">
+                        <div class="rental-left">
+                            <h4>Rental Info</h4>
+                            <p>Please select your rental date</p>
+                        </div>                    
+                        <p>Step 2 of 4</p>
+                    </div>
+                    <label>Pick-up
+                        <input type="radio" id="pick-up-radio" name="pick-up-radio" required>
+                    </label>
+                    <div class="form-grid">
+                        <label for="locations">Locations
+                            <select id="locations" name="locations" placeholder="Select your city" required>
+                                <option value="">Select your city</option>
+                                <option value="London">London</option>
+                                <option value="Paris">Paris</option>
+                                <option value="Berlin">Berlin</option>
+                                <option value="Madrid">Madrid</option>
+                                <option value="Rome">Rome</option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="Milan">Milan</option>
+                            </select>
+                        </label>
+                        <label>Date
+                            <select id="select-date" name="select-date" placeholder="Select your date" required>
+                                <option value="">Select your date</option>
+                                <option value="2020-01-01">2024-01-01</option>
+                                <option value="2020-01-02">2024-01-02</option>
+                                <option value="2020-01-03">2024-01-03</option>
+                                <option value="2020-01-04">2024-01-04</option>
+                                <option value="2020-01-05">2024-01-05</option>
+                                <option value="2020-01-06">2024-01-06</option>
+                            </select>
+                        </label>
+                        <label>Time
+                            <select id="select-time" name="select-time" placeholder="Select your time" required>
+                                <option value="">Select your time</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                            </select>
+                        </label>
+                    </div>
+                    <br/>
+                    <label>Drop-off
+                        <input type="radio" id="drop-off-radio" name="drop-off-radio" required>
+                    </label>
+                    <div class="form-grid">
+                        <label>Locations
+                            <select id="locations" name="locations" placeholder="Select your city" required>
+                                <option value="">Select your city</option>
+                                <option value="London">London</option>
+                                <option value="Paris">Paris</option>
+                                <option value="Berlin">Berlin</option>
+                                <option value="Madrid">Madrid</option>
+                                <option value="Rome">Rome</option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="Milan">Milan</option>
+                            </select>
+                        </label>
+                        <label>Date
+                            <select id="select-date" name="select-date" placeholder="Select your date" required>
+                                <option value="">Select your date</option>
+                                <option value="2020-01-01">2024-01-01</option>
+                                <option value="2020-01-02">2024-01-02</option>
+                                <option value="2020-01-03">2024-01-03</option>
+                                <option value="2020-01-04">2024-01-04</option>
+                                <option value="2020-01-05">2024-01-05</option>
+                                <option value="2020-01-06">2024-01-06</option>                               
+                            </select>
+                        </label>
+                        <label>Time
+                            <select id="select-time" name="select-time" placeholder="Select your time" required>
+                                <option value="">Select your time</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="payment-method form-style">
+                        <div class="payment-header">
+                            <div class="payment-left">
+                                <h4>Payment Method</h4>
+                                <p>Please enter your payment method</p>
+                            </div>                    
+                            <p>Step 3 of 4</p>
+                        </div> 
+                    <div class="payment-header">
+                        <label>
+                            <input type="radio" id="credit-card" name="credit-card">
+                            Credit Card</label>
+                        <img class="visa-mastercard-icon" src="../Assets/Icons/Visa.svg" alt="Visa and Mastercard Logos"/>
+                    </div>
+                    <div class="form-grid">
+                        <label>Card Number
+                            <input type="number" id="card-number" name="card-number" placeholder="Card number">
+                        </label>
+                        <label>Expiry Date
+                            <input type="date" id="expiry-date" name="expiry-date" placeholder="DD/MM/YY">
+                        </label>
+                        <label>CVC
+                            <input type="number" id="cvc" name="cvc" placeholder="CVC">
+                        </label>
+                    </div>
+                    <div class="payment-header">
+                        <label>
+                            <input type="radio" id="paypal" name="paypal">
+                            PayPal</label>
+                        <img class="paypal-icon" src="../Assets/Icons/PayPal.svg" alt="PayPal Logo"/>
+                    </div>
+                    <div class="payment-header">
+                        <label>
+                            <input type="radio" id="bitcoin" name="bitcoin">
+                            Bitcoin</label>
+                        <img class="bitcoin-icon" src="../Assets/Icons/Bitcoin.svg" alt="Bitcoin Logo"/>
+                    </div>
+                </div>
+
+                <div class="confirmation form-style">
+                    <div class="confirmation-header">
+                        <div class="confirmation-left">
+                            <h4>Confirmation</h4>
+                            <p>We are getting to the end. Just a few clicks and your rental is ready!</p>
+                        </div>                    
+                        <p>Step 4 of 4</p>
+                    </div>
+                    <div class="checkbox-container"> 
+                        <label>
+                            <input type="checkbox" name="marketing">
+                            I agree to receiving marketing and newsletter emails. No spam, promise!   
+                        </label>
+                    </div>
+                    <div class="checkbox-container">
+                        <label>
+                            <input type="checkbox" name="terms">
+                            I agree to the terms and conditions and privacy policy.
+                        </label>
+                    </div>
+                    <div class="rent-safe">
+                        <button type="submit" value="submit">Rent Now</button>
+                        <img class="ic-security-saftey" src="../Assets/Icons/ic-security-safety.svg" alt="ic security safety logo"/>
+                        <h4>All your data are safe</h4>
+                        <p>We are using the most advanced secuirty to provide you the best experience ever.</p>
+                    </div>
+                </div>
+            </form>
+            <div id="rental-summary">
+                <h4>Rental Summary</h4>
+                <p>Prices may change depending on the length of the rental and the price of your rental car.</p>
+                <div class="name-look-container">
+                    <img src="../Assets/Icons/Look.svg" alt="specific car rental object"/>
+                    <img src="../Assets/Icons/Car Name.svg" alt="specific car rental object"/>
+                </div>
+                <div class="subtotal-tax-container">
+                    <div class="sub-container">
+                        <h4>Subtotal</h4>
+                        <p>$80.00</p>
+                    </div>
+                    <div class="sub-container">
+                        <h4>Tax</h4>
+                        <p>$0</p>
+                    </div>
+                </div>
+                <div class="promo-code-container">
+                    <input type="text" name="promo-code" placeholder="Apply promo code"/>
+                    <button>Apply Now</button>
+                </div>
+                <div class="total-rental-header">
+                    <div class="total-rental-left">
+                        <h3>Total Rental Price</h3>
+                        <p>Overall price and includes rental discount</p>
+                    </div>                    
+                    <h2>$80.00</h2>
+                </div> 
+            </div>
+        </section>
+    </div>  
+    </main>
+    <div id="search-results" class="hidden"></div> 
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-and-tagline">
+                <img src="../Assets/Images/Logo.svg" alt="MORENT Logo"/>
+                <p>Our vision is to provide convenience and help increase your sales business.</p>
+            </div>
+            <div class="about-community-socials">
+                <ul>About
+                    <li><a href="#howitworks">How it works</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#partnership">Partnership</a></li>
+                    <li><a href="#businessrelations">Business Relations</a></li>
+                </ul>
+                <ul>Community
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#podcast">Podcast</a></li>
+                    <li><a href="#inviteafriend">Invite a friend</a></li>
+                </ul>
+                <ul>Socials
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#twitter">Twitter</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#discord">Discord</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-privacy-and-tcs">
+        <p>&copy; 2024 MORENT. All rights reserved</p>
+        <div class="privacy-ts-and-cs">
+            <p><a href="#privacyandpolicy">Privacy & Policy</a></p>
+            <p><a href="#termsandconditions">Terms & Conditions</a></p>
+        </div>
+    </div>
+    </footer>
+    <script src="../Models/carModel.js" defer></script>
+    <script src="../Repository/index.js"></script>
+    <script src="../Repository/form.js" defer></script>
+</body>
+</html>

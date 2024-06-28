@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MORENT - HOME</title>
+    <link rel="stylesheet" href="./styles.css">     
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="logo-container">
+            <img class="main-logo" src="../Assets/Images/Logo.svg" alt="MORENT Logo"/>
+        </div>
+        <form class="search-container" onsubmit="searchCar(event)">
+                <input class="search-bar" id="search-bar"/>
+                <button id="search-button" type="submit"></button>
+        </form>
+            <div class="icon-container">
+                <ul>
+                    <li class="like-button"><a href="#like"><img src="../Assets/Icons/Like.svg" alt="Like Button"/></a></li>
+                    <li class="notification-button"><a href="#notification"><img src="../Assets/Icons/Notification.svg" alt="Notification Button"/></a></li>
+                    <li class="settings-button"><a href="#settings"><img src="../Assets/Icons/Settings.svg" alt="Settings Button"/></a></li>
+                    <li class="profile--button"><a href="#profile"><img src="../Assets/Icons/Profil.svg" alt="Profile Button"/></a></li>
+                </ul>
+            </div>
+    </nav>
+
+    <main>
+        <div class="main-container" id="main-content">
+                <div class="ads">
+                    <img class="ad-1" src="../Assets/Images/Ads 1.svg"/>
+                    <img class="ad-2" src="../Assets/Images/Ads 2.svg"/>
+                </div>
+            
+                <section id="pickup-dropoff">    
+                <div class="pick-up"> 
+                    <label>
+                        <input class="pick-up-radio" type="radio" name="pick-up"></input>
+                        Pick up
+                    </label>
+                    <div class="pick-up-drop-down">
+                        <label>Locations<br/>
+                            <select id="locations" name="locations" placeholder="Select your city" required>
+                                <option value="">Select your city</option>
+                                <option value="London">London</option>
+                                <option value="Paris">Paris</option>
+                                <option value="Berlin">Berlin</option>
+                                <option value="Madrid">Madrid</option>
+                                <option value="Rome">Rome</option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="Milan">Milan</option>
+                            </select>
+                        </label>
+                        <label>Date<br/>
+                            <select id="select-date" name="select-date" placeholder="Select your date" required>
+                                <option value="">Select your date</option>
+                                <option value="2020-01-01">2024-01-01</option>
+                                <option value="2020-01-02">2024-01-02</option>
+                                <option value="2020-01-03">2024-01-03</option>
+                                <option value="2020-01-04">2024-01-04</option>
+                                <option value="2020-01-05">2024-01-05</option>
+                                <option value="2020-01-06">2024-01-06</option>
+                            </select>
+                        </label>
+                        <label>Time<br/>
+                            <select id="select-time" name="select-time" placeholder="Select your time" required>
+                                <option value="">Select your time</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <img class="switch" src="../Assets/Icons/Switch.svg" alt="toggle direction of pick-up/drop-off"/>
+                <div class="drop-off">
+                    <label>
+                        <input type="radio" name="drop-off"></input>
+                        Drop off
+                    </label>
+                    <div class="drop-off-drop-down">
+                        <label>Locations<br/>
+                            <select id="locations" name="locations" placeholder="Select your city" required>
+                                <option value="">Select your city</option>
+                                <option value="London">London</option>
+                                <option value="Paris">Paris</option>
+                                <option value="Berlin">Berlin</option>
+                                <option value="Madrid">Madrid</option>
+                                <option value="Rome">Rome</option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="Milan">Milan</option>
+                            </select>
+                        </label>
+                        <label>Date<br/>
+                            <select id="select-date" name="select-date" placeholder="Select your date" required>
+                                <option value="">Select your date</option>
+                                <option value="2020-01-01">2024-01-01</option>
+                                <option value="2020-01-02">2024-01-02</option>
+                                <option value="2020-01-03">2024-01-03</option>
+                                <option value="2020-01-04">2024-01-04</option>
+                                <option value="2020-01-05">2024-01-05</option>
+                                <option value="2020-01-06">2024-01-06</option>
+                            </select>
+                        </label>
+                        <label>Time<br/>
+                            <select id="select-time" name="select-time" placeholder="Select your time" required>
+                                <option value="">Select your time</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cars">
+                <h4 class="cars-header">Popular Cars</h4>
+                <div class="popular-cars">
+                    <img src="../Assets/Images/Catalog 1.svg" alt="a popular car"/>
+                    <img src="../Assets/Images/Catalog 2.svg" alt="a popular car"/>
+                    <img src="../Assets/Images/Catalog 3.svg" alt="a popular car"/>
+                    <img src="../Assets/Images/Catalog 4.svg" alt="a popular car"/>
+                </div>
+                <h4 class="cars-header">Recommended Cars</h4>
+                <div class="recommended-cars">
+                    <img src="../Assets/Images/Catalog 5.svg" alt="a recommended car"/>
+                    <img src="../Assets/Images/Catalog 6.svg" alt="a recommended car"/>
+                    <img src="../Assets/Images/Catalog 7.svg" alt="a recommended car"/>
+                    <img src="../Assets/Images/Catalog 8.svg" alt="a recommended car"/>
+                    <br/>
+                </div>
+                <button id="show-more">Show More Cars</button>
+            </section>
+        </div>
+    </main>
+
+    <div id="search-results" class="hidden"></div> 
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo-and-tagline">
+                <img src="../Assets/Images/Logo.svg" alt="MORENT Logo"/>
+                <p>Our vision is to provide convenience and help increase your sales business.</p>
+            </div>
+            <div class="about-community-socials">
+                <ul>About
+                    <li><a href="#howitworks">How it works</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#partnership">Partnership</a></li>
+                    <li><a href="#businessrelations">Business Relations</a></li>
+                </ul>
+                <ul>Community
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#podcast">Podcast</a></li>
+                    <li><a href="#inviteafriend">Invite a friend</a></li>
+                </ul>
+                <ul>Socials
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#twitter">Twitter</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#discord">Discord</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-privacy-and-tcs">
+        <p>&copy; 2024 MORENT. All rights reserved</p>
+        <div class="privacy-ts-and-cs">
+            <p><a href="#privacyandpolicy">Privacy & Policy</a></p>
+            <p><a href="#termsandconditions">Terms & Conditions</a></p>
+        </div>
+    </div>
+    </footer>
+    <script src="../Models/carModel.js" defer></script>
+    <script src="../Repository/index.js"></script>
+</body>
+</html>

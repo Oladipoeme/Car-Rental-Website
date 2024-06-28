@@ -1,0 +1,692 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+/* NAV BAR*/
+
+.nav-container {
+    border: 1px solid #C3D4E966;
+    padding: 40px 60px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.logo-container {
+    flex: 0.5;
+}
+
+.main-logo img {
+    object-fit: cover;
+}
+
+.search-container {
+    display: flex;
+    flex: 1;
+    margin-left: auto;
+    border: 1px solid #C3D4E9;
+    border-radius: 70px;
+}
+
+.search-bar {
+    width: 75%;
+    min-width: 150px;
+    max-width: 492px;
+    background: transparent;
+    height: 44px;
+    padding: 5px 15px;
+    color: inherit;
+    border: transparent;
+
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+.search-container button {
+    text-indent: -999px;
+    width: 25%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: 70px;
+    background: transparent url("../Assets/Icons/search-normal.svg") no-repeat left;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.icon-container {
+    flex: 2;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.icon-container ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-container ul li {
+    list-style: none;
+    margin-left: 25px;
+}
+
+/* SEARCH */
+.hidden {
+    display: none !important;
+}
+
+#search-results {
+    padding: 20px;
+}
+
+.car-info {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+
+.car-details h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.car-details p {
+    font-size: 14px;
+    font-weight: medium;
+    color: #90A3BF;
+}
+
+#back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+/* HOME PAGE */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    opacity: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: #F6F7F9;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ads {
+    padding-top: 40px;
+}
+
+.ad-1 {
+    width: 640px;
+    height: 360px;
+    top: 32px;
+    left: 64px;
+    gap: 0px;
+    border-radius: 10px 0px 0px 0px;
+    opacity: 0px;
+    margin-right: 20px;
+}
+
+.ad-2 {
+    width: 640px;
+    height: 360px;
+    top: 32px;
+    left: 736px;
+    gap: 0px;
+    border-radius: 10px 0px 0px 0px;
+    opacity: 0px;
+}
+
+#pickup-dropoff {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.pick-up, .drop-off {
+    background: #FFFFFF;
+    width: 582px;
+    height: 132px;
+    top: 424px;
+    left: 64px;
+    gap: 0px;
+    border-radius: 10px;
+    opacity: 0px;
+    padding: 25px 50px;
+}
+
+.pick-up-drop-down, .drop-off-drop-down {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.pick-up-drop-down select, .drop-off-drop-down select {
+    color: #90A3BF;
+    border: none;
+}
+
+.cars-header {
+    color: #90A3BF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+#cars {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: #3563E9;*/
+}
+
+#show-more {
+    cursor: pointer;
+    text-decoration:none; 
+    border: white; 
+    margin-top: 60px;
+    margin-bottom: 60PX;
+    background: #3563E9;
+    width: 156px;
+    height: 44px;
+    border-radius: 4px;
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-image: transparent url(../Assets/Icons/Show\ More.svg);
+}
+
+/*CAR PAGE*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 15px;
+    background-color: #f6f7f9;
+}
+
+#filter-column {
+    background-color: white;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    padding-top: 32px;
+
+}
+
+.type {
+    margin-bottom: 15px;
+    font-family: Plus Jakarta Sans, sans-serif;
+}
+
+.capacity {
+    font-family: Plus Jakarta Sans, sans-serif;
+}
+
+#filter-column ul li {
+    list-style: none;
+}
+
+#car-detail {
+    background-color: #f6f7f9;
+    grid-column: 2 / -1;
+    grid-row: 1;
+    padding: 10px;
+    display: flex;
+}
+
+.car-images-container {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+}
+
+.sub-images {
+    margin-top: 32px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.car-info {
+    flex: 0.5;
+    background-color: white;
+    padding: 24px;
+    margin: 32px;
+    border-radius: 10px;
+}
+
+.car-info ul li {
+    list-style: none;
+}
+
+.car-isFavourite {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.car-isFavourite img {
+    margin-left: 15px;
+}
+
+#reviews, #recent-cars {
+    grid-column: 2 / -1;
+    
+}
+
+#reviews {
+    grid-row: 2;
+    padding: 24px;
+    background-color: #f6f7f9;
+}
+
+.review-container {
+    background-color: white;
+    padding: 24px;
+    border-radius: 10px;
+}
+
+#recent-cars {
+    background-color:#f6f7f9;
+    grid-row: 3;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+
+}
+
+.recent-cars {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*FORM PAGE*/
+#car-rental-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    background-color: #f6f7f9;
+    padding: 32px;
+    font-family: Plus Jakarta Sans, sans-serif;
+}
+
+/*.form-style {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+}*/
+
+.form-style h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-style p {
+    font-size: 14px;
+    font-weight: medium;
+    color: #90A3BF;
+}
+
+.form-style input, .form-style select {
+    border: 1px solid white;
+    background-color: #f6f7f9;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.billing-header, .rental-header, .payment-header, .confirmation-header, .total-rental-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;    
+}
+
+.form-grid label {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: semi-bold;
+}
+
+.billing-info {
+    background-color: white;
+    margin-bottom: 32px;
+    border-radius: 10px;
+    padding: 24px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.rental-info {
+    background-color: white;
+    margin-bottom: 32px;
+    border-radius: 10px;
+    padding: 24px;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+#pick-up-radio, #drop-off-radio {
+    margin-bottom: 15px;
+}
+
+.payment-method {
+    background-color: white;
+    margin-bottom: 32px;
+    border-radius: 10px;
+    padding: 24px;
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#cvc {
+    margin-bottom: 24px;
+}
+
+.confirmation {
+    background-color: white;
+    margin-bottom: 32px;
+    border-radius: 10px;
+    padding: 24px;
+    grid-row: 4;
+    grid-column: 1;
+}
+
+.checkbox-container {
+    background-color: #f6f7f9;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.rent-safe {
+    display: flex;
+    flex-direction: column;
+}
+
+.rent-safe button {
+    cursor: pointer;
+    text-decoration:none; 
+    border: white; 
+    margin-top: 15px;
+    margin-bottom: 15PX;
+    background: #3563E9;
+    width: 156px;
+    height: 44px;
+    border-radius: 4px;
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-image: transparent url(../Assets/Icons/Button\ Rental.svg);
+}
+
+.rent-safe img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 15px;
+}
+.rent-safe h4 {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: semi-bold;
+}
+
+.rent-safe p {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 14px;
+    font-weight: medium;
+    color: #90A3BF;
+}
+#rental-summary {
+    background-color: white;
+    grid-row: 1;
+    grid-column: 2 / -1;
+    border-radius: 10px;
+    padding: 24px;
+    height: fit-content;
+}
+
+#rental-summary h4 {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: semi-bold;
+}
+
+#rental-summary p {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 14px;
+    font-weight: medium;
+    color: #90A3BF;
+}
+
+.name-look-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.subtotal-tax-container {
+    margin-top: 32px;
+    padding: 15px;
+    border-top: 1px solid #90A3BF;;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-container { 
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+.sub-container p {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px !important;
+    font-weight: semi-bold;
+    color:#1A202C !important;
+}
+
+.sub-container h4 {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px !important;
+    font-weight: medium;
+    color: #90A3BF;
+}
+.promo-code-container, .promo-code-container input, .promo-code-container button {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #f6f7f9;
+}
+
+.promo-code-container input {
+    padding-left: 15px;
+    height: 56px;
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: medium;
+}
+
+.promo-code-container input:focus {
+    outline: none;
+}
+
+.promo-code-container button {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding-right: 0;
+    cursor: pointer;
+    text-align: end;
+}
+
+.total-rent-price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.total-rental-header {
+    margin-top: 24px;
+}
+
+.total-rental-header h3 {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 20px;
+    font-weight: semi-bold;
+}
+
+.total-rental-header h2 {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.total-rental-header p {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 14px !important;
+    font-weight: medium !important;
+}
+
+/* FOOTER */
+footer {
+    /*background-color: brown;*/
+    padding: 30px 30px;
+}
+
+.footer-container {
+    /*background-color: #3563E9;*/
+    display: flex;
+    flex: 1;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 76px 60px;
+}
+
+.footer-logo-and-tagline {
+    display: flex;
+    flex-direction: column;
+    /*background-color: #F6F7F9;*/
+}
+
+.footer-logo-and-tagline img {
+    width: 148px;
+    height: 44px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.footer-logo-and-tagline p {
+    color: #13131399;
+}
+
+.about-community-socials {
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+.about-community-socials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.about-community-socials a {
+    color: #13131399;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+
+}
+
+.footer-privacy-and-tcs {
+    display: flex;
+    /*background-color: blueviolet;*/
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 60px;
+    border-top: #90A3BF solid 1px;
+}
+
+.footer-privacy-and-tcs a {
+    color: #1A202C;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.privacy-ts-and-cs {
+    margin-left: auto;
+    display: flex;
+}
