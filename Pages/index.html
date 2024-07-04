@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MORENT - HOME</title>
-    <link rel="stylesheet" href="./styles.css">     
+    <link rel="stylesheet" href="./styles.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <nav class="nav-container">
         <div class="logo-container">
-            <img class="main-logo" src="../Assets/Images/Logo.svg" alt="MORENT Logo"/>
+            <img class="main-logo" src="../Assets/Images/Logo.svg" alt="MORENT Logo" onclick="home()"/>
         </div>
         <form class="search-container" onsubmit="searchCar(event)">
-                <input class="search-bar" id="search-bar"/>
+                <input class="search-bar" id="search-bar" required/>
                 <button id="search-button" type="submit"></button>
         </form>
             <div class="icon-container">
@@ -33,9 +34,9 @@
                 </div>
             
                 <section id="pickup-dropoff">    
-                <div class="pick-up"> 
+                <div class="pick-up" id="pick-up-div"> 
                     <label>
-                        <input class="pick-up-radio" type="radio" name="pick-up"></input>
+                        <input class="pick-up-radio" type="radio" name="direction"></input>
                         Pick up
                     </label>
                     <div class="pick-up-drop-down">
@@ -78,10 +79,10 @@
                         </label>
                     </div>
                 </div>
-                <img class="switch" src="../Assets/Icons/Switch.svg" alt="toggle direction of pick-up/drop-off"/>
-                <div class="drop-off">
+                <img class="switch" id="switch-icon" onclick="switchLocations()" src="../Assets/Icons/Switch.svg" alt="toggle direction of pick-up/drop-off"/>
+                <div class="drop-off" id="drop-off-div">
                     <label>
-                        <input type="radio" name="drop-off"></input>
+                        <input type="radio" name="direction"></input>
                         Drop off
                     </label>
                     <div class="drop-off-drop-down">
@@ -147,7 +148,7 @@
         </div>
     </main>
 
-    <div id="search-results" class="hidden"></div> 
+    <div id="car-details" class="hidden"></div> 
 
     <footer>
         <div class="footer-container">

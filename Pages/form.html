@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MORENT - HOME</title>
     <link rel="stylesheet" href="./styles.css">     
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="nav-container">
@@ -63,7 +64,7 @@
                         <p>Step 2 of 4</p>
                     </div>
                     <label>Pick-up
-                        <input type="radio" id="pick-up-radio" name="pick-up-radio" required>
+                        <input type="radio" id="pick-up-radio" name="radio-choice" required>
                     </label>
                     <div class="form-grid">
                         <label for="locations">Locations
@@ -106,7 +107,7 @@
                     </div>
                     <br/>
                     <label>Drop-off
-                        <input type="radio" id="drop-off-radio" name="drop-off-radio" required>
+                        <input type="radio" id="drop-off-radio" name="radio-choice" required>
                     </label>
                     <div class="form-grid">
                         <label>Locations
@@ -159,7 +160,7 @@
                         </div> 
                     <div class="payment-header">
                         <label>
-                            <input type="radio" id="credit-card" name="credit-card">
+                            <input type="radio" id="credit-card" name="payment-choice">
                             Credit Card</label>
                         <img class="visa-mastercard-icon" src="../Assets/Icons/Visa.svg" alt="Visa and Mastercard Logos"/>
                     </div>
@@ -176,13 +177,13 @@
                     </div>
                     <div class="payment-header">
                         <label>
-                            <input type="radio" id="paypal" name="paypal">
+                            <input type="radio" id="paypal" name="payment-choice">
                             PayPal</label>
                         <img class="paypal-icon" src="../Assets/Icons/PayPal.svg" alt="PayPal Logo"/>
                     </div>
                     <div class="payment-header">
                         <label>
-                            <input type="radio" id="bitcoin" name="bitcoin">
+                            <input type="radio" id="bitcoin" name="payment-choice">
                             Bitcoin</label>
                         <img class="bitcoin-icon" src="../Assets/Icons/Bitcoin.svg" alt="Bitcoin Logo"/>
                     </div>
@@ -220,17 +221,14 @@
                 <h4>Rental Summary</h4>
                 <p>Prices may change depending on the length of the rental and the price of your rental car.</p>
                 <div class="name-look-container">
-                    <img src="../Assets/Icons/Look.svg" alt="specific car rental object"/>
-                    <img src="../Assets/Icons/Car Name.svg" alt="specific car rental object"/>
-                </div>
-                <div class="subtotal-tax-container">
-                    <div class="sub-container">
-                        <h4>Subtotal</h4>
-                        <p>$80.00</p>
-                    </div>
-                    <div class="sub-container">
-                        <h4>Tax</h4>
-                        <p>$0</p>
+                    <h2>Rental Summary</h2><br/>
+                    <img id="car-image" src="" alt="Car Image"/>
+                    <br/>
+                    <div class="car-summary">
+                        <p><strong>Car:</strong> <span id="car-name"></span></p>
+                        <p><strong>Price:</strong> <span id="subtotal"></span></p>
+                        <p><strong>Tax:</strong> <span id="tax"></span></p>
+                        <br/>
                     </div>
                 </div>
                 <div class="promo-code-container">
@@ -242,7 +240,7 @@
                         <h3>Total Rental Price</h3>
                         <p>Overall price and includes rental discount</p>
                     </div>                    
-                    <h2>$80.00</h2>
+                    <h2 id="total-price"></h2>
                 </div> 
             </div>
         </section>
@@ -286,7 +284,22 @@
     </div>
     </footer>
     <script src="../Models/carModel.js" defer></script>
-    <script src="../Repository/index.js"></script>
-    <script src="../Repository/form.js" defer></script>
+    <script src="../Repository/index.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const rentalSummary = document.getElementById("rental-summary");
+            const selectedCar = JSON.parse(localStorage.getItem("selectedCar"));
+
+            if (selectedCar) {
+                document.getElementById('car-image').src= "../Assets/Icons/Car (1).svg"
+                document.getElementById('car-name').textContent = `${selectedCar.make} ${selectedCar.model}`;
+                document.getElementById('subtotal').textContent = `$${selectedCar.price} / day`;
+                document.getElementById('tax').textContent = 0;
+                document.getElementById('total-price').textContent = `$${selectedCar.price} / day`;
+            } else {
+                rentalSummary.textContent = "No car selected.";
+            }
+        });
+    </script>
 </body>
 </html>

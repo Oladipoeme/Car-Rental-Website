@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MORENT - HOME</title>
-    <link rel="stylesheet" href="./styles.css">     
+    <title>MORENT - Car Information</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">    
 </head>
 <body>
     <nav class="nav-container">
@@ -26,7 +27,7 @@
     </nav>
 
     <main>
-        <div class="grid-container" id="main-content">
+        <div class="grid-container">
             <section id="filter-column">
                 <ul class="type">TYPE
                     <li><input type="checkbox" name="type" id="sport">Sport</li>
@@ -47,40 +48,17 @@
                 </ul>
             </section>
 
-            <section id="car-detail">
+            <div id="car-details">
                 <div class="car-images-container">
-                    <img src="../Assets/Images/View.svg" alt="Large image of selected car"/>
+                    <img id="insert-searched-image"/>
                     <div class="sub-images">
                         <img src="../Assets/Images/View 1.svg" alt="Small image of selected car's details"/>
                         <img src="../Assets/Images/View 2.svg" alt="Small image of selected car's details"/>
                         <img src="../Assets/Images/View 3.svg" alt="Small image of selected car's details"/>
                     </div>
                 </div>
-                <div class="car-info">
-                    <div class="car-isFavourite">
-                        <h1>Car Name</h1>
-                        <img src="../Assets/Icons/heart.svg" alt="is or isn't favourited"/>
-                    </div>
-                    <img src="../Assets/Icons/Review Star.svg" alt="shows car rating"/>
-                    <img src="../Assets/Icons/440+ Reviewer.svg" alt="show number of reviewers"/>
-                    <p>number Reviews</p>
-                    <p>Description of the car.</p>
-                    <ul>Car Type
-                        <li>Type</li>
-                    </ul>
-                    <ul>Car Capacity
-                        <li>Capacity</li>
-                    </ul>
-                    <ul>Steering<li>Steering</li>
-                    </ul>
-                    <ul>Engine Capacity<li>Engine Capacity</li>
-                    </ul>
-                    <div class="rent-now">
-                        <p>Price/days</p>
-                        <button>Rent Now</button>
-                    </div>
-                </div>
-            </section>
+                <div class="car-information" id="car-information"><button id="rental-button" onclick="goToForm()" >Rent Now</button></div>
+            </div>
 
             <section id="reviews">
                 <div class="review-container">
